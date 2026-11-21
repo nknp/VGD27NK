@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cs3wubaclrhbs"]
+
+[ext_resource type="Script" uid="uid://bc014wnahhjgw" path="res://csg_sphere_3d.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dilqsta5evkgu" path="res://camera_node.gd" id="2_0xm2m"]
+
+[node name="Main" type="Node3D" unique_id=530329949]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=390125647]
+transform = Transform3D(0.8825641, -0.16317587, 0.44096965, -0.2505362, 0.63042426, 0.7347087, -0.3978847, -0.7589064, 0.51550835, 1.9499999, 6.0999994, 1.249999)
+
+[node name="Planets" type="Node3D" parent="." unique_id=280732829]
+
+[node name="Planet 2" type="CSGSphere3D" parent="Planets" unique_id=284534114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1500006, 9.650001, 2.7)
+radius = 0.6
+smooth_faces = false
+
+[node name="Planet 3" type="CSGSphere3D" parent="Planets" unique_id=2109209387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1500006, 4.0500007, 7)
+radius = 0.6
+smooth_faces = false
+
+[node name="Planet 1" type="CSGSphere3D" parent="Planets" unique_id=1205603747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2, 6.55, 1.35)
+radius = 0.6
+smooth_faces = false
+
+[node name="Test mass" type="Node3D" parent="." unique_id=1060657044]
+
+[node name="TestMass" type="CSGSphere3D" parent="Test mass" unique_id=1731556829]
+radius = 0.05
+script = ExtResource("1_ig7tw")
+
+[node name="PlayerStuffs" type="Node3D" parent="Test mass/TestMass" unique_id=1796011937]
+script = ExtResource("2_0xm2m")
+
+[node name="Camera" type="Camera3D" parent="Test mass/TestMass/PlayerStuffs" unique_id=1788627248]

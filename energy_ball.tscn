@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://mumv62u5r33m"]
+
+[ext_resource type="Script" uid="uid://bd6sry2vterqp" path="res://energy_ball.gd" id="1_2hwwp"]
+
+[node name="Energy Ball" type="Node3D" unique_id=1590537619]
+script = ExtResource("1_2hwwp")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=1718623942]
+radius = 0.025
+
+[node name="LifeSpan" type="Timer" parent="." unique_id=245201530]
+process_callback = 0
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="LifeSpan" to="." method="_on_life_span_timeout"]
